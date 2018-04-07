@@ -2853,9 +2853,9 @@ discord_buddy_guild(DiscordAccount *da, DiscordGuild *guild)
 		}
 
 		/* Drop voice channels since we don't support them anyway */
-		if (channel->type == CHANNEL_VOICE) {
-			continue;
-		}
+//		if (channel->type == CHANNEL_VOICE) {
+//			continue;
+//		}
 
 		discord_add_channel_to_blist(da, channel, group);
 	}
@@ -4033,10 +4033,10 @@ discord_open_chat(DiscordAccount *da, guint64 id, gchar *name, gboolean present)
 		name = channel->name;
 	}
 
-	if (channel->type == CHANNEL_VOICE) {
-		purple_notify_error(da, _("Bad channel type"), _("Cannot join a voice channel as text"), "", purple_request_cpar_from_connection(da->pc));
-		return NULL;
-	}
+//	if (channel->type == CHANNEL_VOICE) {
+//		purple_notify_error(da, _("Bad channel type"), _("Cannot join a voice channel as text"), "", purple_request_cpar_from_connection(da->pc));
+//		return NULL;
+//	}
 
 	gchar *id_str = from_int(id);
 	chatconv = purple_conversations_find_chat_with_account(id_str, da->account);
